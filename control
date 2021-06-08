@@ -1,0 +1,14 @@
+Package: com.ps.padgrid
+Name: PadGrid
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Increase home screen icon grid size for iPad.
+Maintainer: PoomSmart
+Author: PoomSmart
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), gsc.ipad, firmware (>= 7.0), me.nepeta.iconstate, preferenceloader
+Provides: com.ps.pad56
+Conflicts: com.ps.pad56
+Replaces: com.ps.pad56
+Depiction: https://poomsmart.github.io/repo/depictions/padgrid.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/padgrid.json
