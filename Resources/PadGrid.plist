@@ -35,7 +35,7 @@
                 <key>key</key>
                 <string>GridSizeKey</string>
                 <key>label</key>
-                <string>Method</string>
+                <string>Size</string>
                 <key>validTitles</key>
                 <array>
                     <string>Default</string>

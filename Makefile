@@ -1,4 +1,5 @@
 export PREFIX = $(THEOS)/toolchain/Xcode11.xctoolchain/usr/bin/
+PACKAGE_VERSION = 1.0.1
 TARGET := iphone:clang:latest:7.0
 
 include $(THEOS)/makefiles/common.mk
