@@ -24,6 +24,18 @@ static void ReadGridSize() {
             cols = 8;
             rows = 6;
             break;
+        case 4:
+            cols = 9;
+            rows = 6;
+            break;
+        case 5:
+            cols = 10;
+            rows = 7;
+            break;
+        case 6:
+            cols = 10;
+            rows = 8;
+            break;
     }
 }
 

@@ -21,7 +21,13 @@
                 <key>label</key>
                 <string>Grid Size (Landscape Format)</string>
                 <key>footerText</key>
-                <string>Note that the value will override even the grid size when the display is zoomed.</string>
+                <string>Note that the value will override even the grid size when the display is zoomed.
+
+8x6 is recommended for homescreen with widgets and Today View.
+
+9x6 or 10x7 is recommended for homescreen with 2x2 widgets without Today View (or with NotTodayHomeScreenSideBar tweak) and icon labels.
+
+10x8 is recommended for homescreen without widgets and those who want to max out the grid size.</string>
             </dict>
             <dict>
                 <key>cell</key>
@@ -42,6 +48,9 @@
                     <string>6x5</string>
                     <string>8x5</string>
                     <string>8x6</string>
+                    <string>9x6</string>
+                    <string>10x7</string>
+                    <string>10x8</string>
                 </array>
                 <key>validValues</key>
                 <array>
@@ -49,6 +58,9 @@
                     <integer>1</integer>
                     <integer>2</integer>
                     <integer>3</integer>
+                    <integer>4</integer>
+                    <integer>5</integer>
+                    <integer>6</integer>
                 </array>
             </dict>
             <dict>
