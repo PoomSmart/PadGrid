@@ -7,7 +7,7 @@
 int GridSize;
 NSUInteger cols, rows;
 
-static void ReadGridSize() {
+static void ReadGridSize(NSDictionary *PSSettings) {
     switch (GridSize) {
         case 0:
             cols = rows = 0;
@@ -36,6 +36,16 @@ static void ReadGridSize() {
             cols = 10;
             rows = 8;
             break;
+        case 99: {
+            int c, r;
+            GetInt(c, Columns, 0);
+            GetInt(r, Rows, 0);
+            if (c < 0) c = 0;
+            if (r < 0) r = 0;
+            cols = c;
+            rows = r;
+            break;
+        }
     }
 }
 
@@ -84,7 +94,7 @@ static void ReadGridSize() {
 %ctor {
     GetPrefs();
     GetInt2(GridSize, 0);
-    ReadGridSize();
+    ReadGridSize(PSSettings);
     if (IS_IOS_OR_NEWER(iOS_14_0)) {
         %init(Modern);
     } else {

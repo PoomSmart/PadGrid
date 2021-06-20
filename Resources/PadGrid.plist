@@ -23,11 +23,11 @@
                 <key>footerText</key>
                 <string>Note that the value will override even the grid size when the display is zoomed.
 
-8x6 is recommended for homescreen with widgets and Today View.
+(For iOS 14+) 8x6 is recommended for homescreen with widgets and Today View.
 
-9x6 or 10x7 is recommended for homescreen with 2x2 widgets without Today View (or with NotTodayHomeScreenSideBar tweak) and icon labels.
+(For iOS 14+) 9x6 or 10x7 is recommended for homescreen with 2x2 widgets without Today View (or with NotTodayHomeScreenSideBar tweak) and icon labels.
 
-10x8 is recommended for homescreen without widgets and those who want to max out the grid size.</string>
+10x8 is recommended for homescreen without widgets (for iOS 14+) or those who want to max out the grid size.</string>
             </dict>
             <dict>
                 <key>cell</key>
@@ -51,6 +51,7 @@
                     <string>9x6</string>
                     <string>10x7</string>
                     <string>10x8</string>
+                    <string>Custom</string>
                 </array>
                 <key>validValues</key>
                 <array>
@@ -61,7 +62,48 @@
                     <integer>4</integer>
                     <integer>5</integer>
                     <integer>6</integer>
+                    <integer>99</integer>
                 </array>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>label</key>
+                <string>Custom Grid Size</string>
+                <key>footerText</key>
+                <string>Manually set the number of columns and rows if Grid Size is Custom.</string>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSEditTextCell</string>
+                <key>detail</key>
+                <string>PSDetailController</string>
+                <key>default</key>
+                <string></string>
+                <key>defaults</key>
+                <string>com.ps.padgrid</string>
+                <key>key</key>
+                <string>RowsKey</string>
+                <key>placeholder</key>
+                <string>Rows</string>
+                <key>isNumeric</key>
+                <true/>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSEditTextCell</string>
+                <key>detail</key>
+                <string>PSDetailController</string>
+                <key>default</key>
+                <string></string>
+                <key>defaults</key>
+                <string>com.ps.padgrid</string>
+                <key>key</key>
+                <string>ColumnsKey</string>
+                <key>placeholder</key>
+                <string>Columns</string>
+                <key>isNumeric</key>
+                <true/>
             </dict>
             <dict>
                 <key>cell</key>
