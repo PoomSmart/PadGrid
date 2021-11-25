@@ -108,6 +108,82 @@
             <dict>
                 <key>cell</key>
                 <string>PSGroupCell</string>
+                <key>label</key>
+                <string>Custom Folder Size (iOS 14+)</string>
+                <key>footerText</key>
+                <string>Manually set the number of columns and rows of folders.</string>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSLinkListCell</string>
+                <key>defaults</key>
+                <string>com.ps.padgrid</string>
+                <key>default</key>
+                <integer>0</integer>
+                <key>detail</key>
+                <string>PSListItemsController</string>
+                <key>key</key>
+                <string>FolderColsKey</string>
+                <key>label</key>
+                <string>Folder Columns</string>
+                <key>validTitles</key>
+                <array>
+                    <string>Default</string>
+                    <string>3</string>
+                    <string>4</string>
+                    <string>5</string>
+                    <string>6</string>
+                    <string>7</string>
+                    <string>8</string>
+                </array>
+                <key>validValues</key>
+                <array>
+                    <integer>0</integer>
+                    <integer>3</integer>
+                    <integer>4</integer>
+                    <integer>5</integer>
+                    <integer>6</integer>
+                    <integer>7</integer>
+                    <integer>8</integer>
+                </array>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSLinkListCell</string>
+                <key>defaults</key>
+                <string>com.ps.padgrid</string>
+                <key>default</key>
+                <integer>0</integer>
+                <key>detail</key>
+                <string>PSListItemsController</string>
+                <key>key</key>
+                <string>FolderRowsKey</string>
+                <key>label</key>
+                <string>Folder Rows</string>
+                <key>validTitles</key>
+                <array>
+                    <string>Default</string>
+                    <string>3</string>
+                    <string>4</string>
+                    <string>5</string>
+                    <string>6</string>
+                    <string>7</string>
+                    <string>8</string>
+                </array>
+                <key>validValues</key>
+                <array>
+                    <integer>0</integer>
+                    <integer>3</integer>
+                    <integer>4</integer>
+                    <integer>5</integer>
+                    <integer>6</integer>
+                    <integer>7</integer>
+                    <integer>8</integer>
+                </array>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
                 <key>footerAlignment</key>
                 <integer>1</integer>
                 <key>footerText</key>
