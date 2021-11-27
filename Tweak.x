@@ -4,7 +4,7 @@
 #import <SpringBoardHome/SBIconListGridLayoutConfiguration.h>
 #import <version.h>
 
-int GridSize;
+int GridSize, FolderCols, FolderRows;
 NSUInteger cols, rows;
 
 static void ReadGridSize(NSDictionary *PSSettings) {
@@ -82,6 +82,12 @@ static void ReadGridSize(NSDictionary *PSSettings) {
             config.numberOfLandscapeColumns = cols;
             config.numberOfPortraitRows = cols;
             config.numberOfPortraitColumns = rows;
+        } else if ([iconLocation hasPrefix:@"SBIconLocationFolder"] && FolderRows && FolderCols) {
+            SBIconListGridLayoutConfiguration *config = [layout valueForKey:@"_layoutConfiguration"];
+            config.numberOfLandscapeRows = FolderRows;
+            config.numberOfLandscapeColumns = FolderCols;
+            config.numberOfPortraitRows = FolderCols;
+            config.numberOfPortraitColumns = FolderRows;
         }
     }
     return layout;
@@ -95,6 +101,8 @@ static void ReadGridSize(NSDictionary *PSSettings) {
     GetPrefs();
     GetInt2(GridSize, 0);
     ReadGridSize(PSSettings);
+    GetInt2(FolderRows, 0);
+    GetInt2(FolderCols, 0);
     if (IS_IOS_OR_NEWER(iOS_14_0)) {
         %init(Modern);
     } else {
