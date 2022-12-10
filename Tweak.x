@@ -4,6 +4,7 @@
 #import <SpringBoardHome/SBIconListGridLayoutConfiguration.h>
 #import <version.h>
 
+BOOL ReduceInsets;
 int GridSize, FolderCols, FolderRows;
 NSUInteger cols, rows;
 
@@ -76,12 +77,24 @@ static void ReadGridSize(NSDictionary *PSSettings) {
 - (SBIconListGridLayout *)makeLayoutForIconLocation:(NSString *)iconLocation {
     SBIconListGridLayout *layout = %orig;
     if (@available(iOS 13.0, *)) {
-        if ([iconLocation hasPrefix:@"SBIconLocationRoot"] && rows && cols) {
+        if ([iconLocation hasPrefix:@"SBIconLocationRoot"]) {
             SBIconListGridLayoutConfiguration *config = [layout valueForKey:@"_layoutConfiguration"];
-            config.numberOfLandscapeRows = rows;
-            config.numberOfLandscapeColumns = cols;
-            config.numberOfPortraitRows = cols;
-            config.numberOfPortraitColumns = rows;
+            if (rows && cols) {
+                config.numberOfLandscapeRows = rows;
+                config.numberOfLandscapeColumns = cols;
+                config.numberOfPortraitRows = cols;
+                config.numberOfPortraitColumns = rows;
+            }
+            if (IS_IOS_OR_NEWER(iOS_15_0) && ReduceInsets) {
+                UIEdgeInsets landscapeInsets = config.landscapeLayoutInsets;
+                UIEdgeInsets portraitInsets = config.portraitLayoutInsets;
+                landscapeInsets.left /= 2;
+                landscapeInsets.right /= 2;
+                portraitInsets.left /= 2;
+                portraitInsets.right /= 2;
+                config.landscapeLayoutInsets = landscapeInsets;
+                config.portraitLayoutInsets = portraitInsets;
+            }
         } else if ([iconLocation hasPrefix:@"SBIconLocationFolder"] && FolderRows && FolderCols) {
             SBIconListGridLayoutConfiguration *config = [layout valueForKey:@"_layoutConfiguration"];
             config.numberOfLandscapeRows = FolderRows;
@@ -104,6 +117,7 @@ static void ReadGridSize(NSDictionary *PSSettings) {
     GetInt2(FolderRows, 0);
     GetInt2(FolderCols, 0);
     if (IS_IOS_OR_NEWER(iOS_14_0)) {
+        GetBool2(ReduceInsets, NO);
         %init(Modern);
     } else {
         %init(Legacy);
