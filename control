@@ -6,7 +6,7 @@ Description: Increase home screen icon grid size for iPad.
 Maintainer: PoomSmart
 Author: PoomSmart
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), gsc.ipad, firmware (>= 7.0), preferenceloader, me.nepeta.iconstate | com.eswick.iconlayoutmanager | com.ichitaso.iconorder
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 7.0), preferenceloader, com.ichitaso.iconorder | me.nepeta.iconstate | com.eswick.iconlayoutmanager
 Provides: com.ps.pad56
 Conflicts: com.ps.pad56
 Replaces: com.ps.pad56

@@ -1,5 +1,3 @@
-#define tweakIdentifier @"com.ps.padgrid"
-#import "../PSPrefs/PSPrefs.x"
 #import <SpringBoardHome/SBIconListGridLayout.h>
 #import <SpringBoardHome/SBIconListGridLayoutConfiguration.h>
 #import <version.h>
@@ -8,7 +6,7 @@ BOOL ReduceInsets;
 int GridSize, FolderCols, FolderRows;
 NSUInteger cols, rows;
 
-static void ReadGridSize(NSDictionary *PSSettings) {
+static void ReadGridSize(NSUserDefaults *defaults) {
     switch (GridSize) {
         case 0:
             cols = rows = 0;
@@ -38,9 +36,8 @@ static void ReadGridSize(NSDictionary *PSSettings) {
             rows = 8;
             break;
         case 99: {
-            int c, r;
-            GetInt(c, Columns, 0);
-            GetInt(r, Rows, 0);
+            int c = [defaults integerForKey:@"ColumnsKey"];
+            int r = [defaults integerForKey:@"RowsKey"];
             if (c < 0) c = 0;
             if (r < 0) r = 0;
             cols = c;
@@ -111,13 +108,13 @@ static void ReadGridSize(NSDictionary *PSSettings) {
 %end
 
 %ctor {
-    GetPrefs();
-    GetInt2(GridSize, 0);
-    ReadGridSize(PSSettings);
-    GetInt2(FolderRows, 0);
-    GetInt2(FolderCols, 0);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    GridSize = [defaults integerForKey:@"GridSizeKey"];
+    ReadGridSize(defaults);
+    FolderRows = [defaults integerForKey:@"FolderRowsKey"];
+    FolderCols = [defaults integerForKey:@"FolderColsKey"];
     if (IS_IOS_OR_NEWER(iOS_14_0)) {
-        GetBool2(ReduceInsets, NO);
+        ReduceInsets = [defaults boolForKey:@"ReduceInsetsKey"];
         %init(Modern);
     } else {
         %init(Legacy);

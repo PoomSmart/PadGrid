@@ -33,7 +33,7 @@
                 <key>cell</key>
                 <string>PSLinkListCell</string>
                 <key>defaults</key>
-                <string>com.ps.padgrid</string>
+                <string>com.apple.springboard</string>
                 <key>default</key>
                 <integer>0</integer>
                 <key>detail</key>
@@ -81,7 +81,7 @@
                 <key>default</key>
                 <string></string>
                 <key>defaults</key>
-                <string>com.ps.padgrid</string>
+                <string>com.apple.springboard</string>
                 <key>key</key>
                 <string>RowsKey</string>
                 <key>placeholder</key>
@@ -97,7 +97,7 @@
                 <key>default</key>
                 <string></string>
                 <key>defaults</key>
-                <string>com.ps.padgrid</string>
+                <string>com.apple.springboard</string>
                 <key>key</key>
                 <string>ColumnsKey</string>
                 <key>placeholder</key>
@@ -117,7 +117,7 @@
                 <key>cell</key>
                 <string>PSLinkListCell</string>
                 <key>defaults</key>
-                <string>com.ps.padgrid</string>
+                <string>com.apple.springboard</string>
                 <key>default</key>
                 <integer>0</integer>
                 <key>detail</key>
@@ -151,7 +151,7 @@
                 <key>cell</key>
                 <string>PSLinkListCell</string>
                 <key>defaults</key>
-                <string>com.ps.padgrid</string>
+                <string>com.apple.springboard</string>
                 <key>default</key>
                 <integer>0</integer>
                 <key>detail</key>
@@ -200,7 +200,7 @@
                 <key>default</key>
                 <false/>
                 <key>defaults</key>
-                <string>com.ps.padgrid</string>
+                <string>com.apple.springboard</string>
                 <key>key</key>
                 <string>ReduceInsetsKey</string>
                 <key>label</key>
@@ -219,7 +219,7 @@
                 <key>footerAlignment</key>
                 <integer>1</integer>
                 <key>footerText</key>
-                <string>© 2021 - 2022 PoomSmart</string>
+                <string>© 2021 - 2023 PoomSmart</string>
             </dict>
         </array>
     </dict>
